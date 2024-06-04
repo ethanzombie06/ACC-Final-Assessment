@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" id="theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pico.green.min.css') }}" />
+    <script src="{{ url_for('static', filename='/js/theme.js') }}"></script>
+</head>
+<body onload="load()">
+    <article style="top: 0; position: sticky;">
+        <nav>
+            <ul>
+                <li><a href="/"><strong>RZA</strong></a></li>
+            </ul>
+            <ul>
+                <div>
+                    <button onclick="ChangeTheme()" style="padding-right: 10px;">change theme</button>
+                </div>
+                {% if current_user.is_authenticated %}
+                    
+                <details class="dropdown" style="padding-right: 10px;">
+                    <summary  role="button">Account</summary>
+                    <ul>
+                        <li><a href="/SignOut">SignOut</a></li>
+                        <li><a href="/Profile">Profile</a></li>
+                    </ul>
+                </details>
+                <details class="dropdown">
+                    <summary role="button">Tickets</summary>
+                    <ul>
+                        <li><a href="/ZooBooking">Book Zoo Tickets</a></li>
+                        <li><a href="/HotelBooking">Book Hotel Tickets</a></li>
+                    </ul>
+                </details>
+            {% else %}
+                <li>
+                    <details class="dropdown">
+                        <summary role="button">Login!</summary>
+                        <ul>
+                            <li><a href="/SignUp">Sign Up</a></li>
+                            <li><a href="/SignIn">Sign In</a></li>
+                        </ul>
+                    </details>
+                </li>
+            {% endif %}
+                <li><a href="/Educational">Educational Info</a></li>
+                <li><a href="/ParkInfo">Park Info</a></li>
+            </ul>
+        </nav>
+    </article>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <article>
+            {% block title %}
+            {% endblock %}
+        </article>
+        {% block main %}    
+        {% endblock %}
+    </div>
+
+</body>
+</html>

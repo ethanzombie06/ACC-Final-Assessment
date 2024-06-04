@@ -1,0 +1,31 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+    <strong>Welcome to RZA!</strong>
+{% endblock %}
+
+{% block main %}
+    <article>
+        <strong>Current events</strong>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, laboriosam vel! Incidunt modi neque fuga inventore recusandae suscipit reprehenderit voluptatem asperiores repudiandae deserunt, aspernatur alias amet quae quos a nemo.
+            Omnis similique et velit dolorum. Ratione accusantium veniam natus explicabo velit, vel animi numquam reprehenderit inventore, eveniet iste delectus saepe! Odio dolores eaque quasi vero quod nemo recusandae nesciunt a.
+            Repellendus autem dolore cumque tenetur, magnam aspernatur quaerat esse. Aspernatur, odio? Libero iste saepe illum culpa dicta omnis odio quasi a, fugiat ex voluptatibus ad sint repellat quidem modi ratione.
+        </p>
+
+        <strong>Stay in one of our hotel rooms!</strong>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, laboriosam vel! Incidunt modi neque fuga inventore recusandae suscipit reprehenderit voluptatem asperiores repudiandae deserunt, aspernatur alias amet quae quos a nemo.
+            Omnis similique et velit dolorum. Ratione accusantium veniam natus explicabo velit, vel animi numquam reprehenderit inventore, eveniet iste delectus saepe! Odio dolores eaque quasi vero quod nemo recusandae nesciunt a.
+            Repellendus autem dolore cumque tenetur, magnam aspernatur quaerat esse. Aspernatur, odio? Libero iste saepe illum culpa dicta omnis odio quasi a, fugiat ex voluptatibus ad sint repellat quidem modi ratione.
+        </p>
+    </article>
+    <article>
+        <nav>
+            <ul>
+                <li><img src="{{ url_for('static', filename='/photo_assets/Snow-leopards.jpg') }}" alt=""></li>
+                <li><img src="{{ url_for('static', filename='/photo_assets/hotel.webp') }}" alt=""></li>
+            </ul>
+        </nav>
+    </article>
+{% endblock %}

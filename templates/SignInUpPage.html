@@ -1,0 +1,25 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+    <strong>{{ title }}</strong>
+{% endblock %}
+
+{% block main %}
+    <article>
+        <form method="post">
+            {% for field in form %}
+                {% if field.type == "BooleanField" %}
+                    <div style="padding-bottom: 25px;">
+                    {{ field }}
+                    {{ field.label }}   
+                    </div>
+                {% elif field.type == "DateField" %}
+                    {{ field.label }}
+                    {{ field }}
+                {% else %}
+                    {{ field }}  
+                {% endif %}
+            {% endfor %}
+        </form>
+    </article>
+{% endblock %}

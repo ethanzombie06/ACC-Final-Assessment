@@ -1,0 +1,30 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+    <strong>Learn more about our animals!</strong>
+{% endblock %}
+
+{% block main %}
+    <!-- Generated using https://griddy.io/ -->
+    <div style="
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        justify-items: stretch;
+        align-items: stretch;
+        ">
+        {% for i in range(data|length) %}
+            <article>
+                <div style="padding-bottom: 25px;">
+                    <strong>{{ data[i].Title }}</strong>
+                    <p>{{ data[i].Body }}</p>
+                    <a href="/Animals/{{data[i].Title}}"><button>Read on its own page!</button></a>
+                </div>
+                <div>
+                    <img src={{imgLinks[i]}} alt="{{imgLinks[i]}}">
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock %}

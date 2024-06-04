@@ -1,0 +1,39 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+    <strong>Welcome to your profile {{current_user.Username}}!</strong>
+{% endblock %}
+
+{% block main %}
+    <article>
+        <div style="padding-bottom: 15px;">
+        <strong >Account details:</strong>
+    </div>
+        <p>Username: {{current_user.Username}}</p>
+        <p>Email: {{current_user.Email}}</p>
+        <strong>Your Bookings:</strong>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Booking id</th>
+                    <th scope="col">Booking type</th>
+                    <th scope="col">Attendees</th>
+                    <th scope="col">Booking time slot</th>
+                </tr>
+            <tbody>
+                {% for i in data %}
+                    <tr>
+                        <th scope="row">{{ i.id}}</th>
+                        <td>{{ i.Booking_type}}</td>
+                        <td>{{ i.Attendees }}</td>
+                        {% if i.Booking_type == "Zoo" %}
+                            <td>{{ i.Start }}</td>
+                        {% else %}
+                            <td>{{ i.Start }} - {{ i.End }}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+            
+    </article>
+{% endblock %}

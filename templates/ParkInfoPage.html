@@ -1,0 +1,22 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+    <strong>Park information</strong>
+{% endblock %}
+
+{% block main %}
+    <article>
+        <strong>when you arrive</strong>
+        <p>what follows will be replaced with an explination of what an avrage day at the park would look like. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga a placeat vero ullam. Voluptatem provident repellendus molestiae ullam fugit praesentium nemo, eum aliquam rem cumque magnam eligendi labore unde explicabo.
+        Cum, dignissimos debitis. Debitis eos ratione quo voluptas ipsam dolor tempore facilis? Est quibusdam sunt maxime, accusamus quam possimus nam corrupti numquam culpa quidem, reprehenderit nihil. Quasi odit ea dolore!
+        Reiciendis pariatur facilis qui asperiores? Ut eum quasi voluptates sequi eaque ipsa sunt itaque explicabo, rem eius possimus doloremque sint! Facilis sint incidunt magnam hic. Distinctio nesciunt alias dicta suscipit.</p>
+    </article>
+    <article>
+        <nav>
+            <ul>
+                <li><img src="{{ url_for('static', filename='/photo_assets/Giraffe-interacting.webp') }}" alt=""></li>
+                <li><img src="{{ url_for('static', filename='/photo_assets/tiger.jpg') }}" alt=""></li>
+            </ul>
+        </nav>
+    </article>
+{% endblock %}

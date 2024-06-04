@@ -1,0 +1,21 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+    <strong>{{ data.Title }}</strong>
+{% endblock %}
+
+{% block main %}
+    <article>
+        <div style="padding-bottom: 25px;">
+            <p>{{ data.Body }}</p>
+            <a href="/Educational"><button>Back</button></a>
+            <button onclick="document.getElementById('id1').play();">Hear this animal</button>
+            <audio id="id1">
+                <source src="{{videolink}}">
+            </audio>
+        </div>
+        <div>
+            <img src={{imgLink}} alt="">   
+        </div>
+    </article>
+{% endblock %}
